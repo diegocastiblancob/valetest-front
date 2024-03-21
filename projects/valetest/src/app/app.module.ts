@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { LookAndFeelRepository } from './core/repositories/lookAndFeel.repository';
 import { LookAndFeelService } from './infrastructure/services/look-and-feel.service';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [
     {provide: LookAndFeelRepository, useClass: LookAndFeelService }

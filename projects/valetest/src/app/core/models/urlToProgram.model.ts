@@ -11,7 +11,7 @@ export class LookAndFeelModel {
     public primaryColor: string,
     public secondaryColor: string,
     public tertiaryColor: string,
-    public backgroudColor: string,
+    public background: string,
     public fontFamilyName: string
   ) { }
 }

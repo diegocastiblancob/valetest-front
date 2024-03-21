@@ -5,7 +5,6 @@ export interface IMappedTheme {
 }
 
 export const applyTheme = (theme: LookAndFeelModel): void => {
-  console.log(theme);
   if (!theme) return;
 
   theme = extend(theme);
@@ -27,8 +26,9 @@ export const mapTheme = (variables: LookAndFeelModel): IMappedTheme => {
     "--ngx-valepro-color-primary": variables.primaryColor,
     "--ngx-valepro-color-secondary": variables.secondaryColor,
     "--ngx-valepro-color-tertiary": variables.tertiaryColor,
-    "--ngx-valepro-color-background": variables.backgroudColor,
-    "--imagen-background-login": `url(${variables.imageBackgroundLogin})`,
+    "--ngx-valepro-color-background": variables.background,
+    "--ngx-valepro-font-family": variables.fontFamilyName,
+    "--imagen-background-login": `url(${variables.imageBackgroundLogin})`
   };
 };
 

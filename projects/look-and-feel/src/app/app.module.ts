@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LookAndFeelModule } from './modules/look-and-feel/look-and-feel.module';
 import { LookAndFeelComponent } from './modules/look-and-feel/look-and-feel.component';
+import { MatTabsModule } from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { LookAndFeelComponent } from './modules/look-and-feel/look-and-feel.comp
   imports: [
     BrowserModule,
     AppRoutingModule,
-    LookAndFeelModule
+    LookAndFeelModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

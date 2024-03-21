@@ -1,0 +1,11 @@
+:root{
+    --ngx-valepro-color-primary: #b43308;
+    --ngx-valepro-color-secondary:#13c331;
+    --ngx-valepro-color-tertiary: #33d0f0;
+    --ngx-valepro-color-background: #1F134B;
+    --ngx-valepro-font-family: 'Noto Sans';
+}
+
+$font-size         : 1.6rem;
+$font-primary      : --ngx-valepro-font-family, normal;
+$font-secondary    : --ngx-valepro-font-family, normal;

@@ -1,0 +1,15 @@
+button,
+input[type="submit"],
+input[type="button"] {
+    min-width: 14rem;
+    &.btn {
+        &--outline {
+            background-color: transparent;
+            height: 44px;
+            border: 2px solid var(--ngx-valepro-color-tertiary);;
+            border-radius: 22px;
+            opacity: 1;
+            margin: auto;
+        }
+    }
+}

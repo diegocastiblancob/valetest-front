@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { LookAndFeelRoutingModule } from './look-and-feel-routing.module';
 import { SystemDesignComponent } from './system-design/system-design.component';
-import { MatTabsModule } from '@angular/material/tabs';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,9 @@ import { MatTabsModule } from '@angular/material/tabs';
   imports: [
     CommonModule,
     LookAndFeelRoutingModule,
-    MatTabsModule
+    MatInputModule,
+    MatFormFieldModule,
+    ReactiveFormsModule
   ]
 })
 export class LookAndFeelModule { }
