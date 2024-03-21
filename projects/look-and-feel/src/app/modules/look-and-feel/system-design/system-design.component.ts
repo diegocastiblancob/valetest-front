@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { applyTheme } from 'projects/valetest/src/app/styleLoad';
 
 @Component({
@@ -12,9 +12,12 @@ export class SystemDesignComponent {
 
   constructor(private fb: FormBuilder) {
     this.lookAndFeelForm = this.fb.group({
-      colorPrimary: ['#F4F4F4', Validators.required],
-      colorSecondary: ['#1A0C3F', Validators.required],
-      colorTertiary: ['#F9BE2D', Validators.required]
+      // colorPrimary: ['#F4F4F4', Validators.required],
+      // colorSecondary: ['#1A0C3F', Validators.required],
+      // colorTertiary: ['#F9BE2D', Validators.required],
+      colorPrimary: new FormControl('', Validators.required),
+      colorSecondary: new FormControl('', Validators.required),
+      colorTertiary: new FormControl('', Validators.required)
     });
   }
 

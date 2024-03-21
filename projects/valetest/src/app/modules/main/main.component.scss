@@ -104,8 +104,9 @@
     top: 0;
     height: 60px;
     //background: var(--ngx-valepro-color-background) 0% 0% no-repeat padding-box;
-    background: #F4F4F4 0% 0% no-repeat padding-box;
+    background: var(--ngx-valepro-color-primary) 0% 0% no-repeat padding-box;
     opacity: 1;
+
     @media screen and (max-width: 1023px) {
         .menu-icon {
             display: block;
@@ -125,6 +126,7 @@
     .sidebar {
         display: none;
     }
+
     .banner {
         height: 180px;
         background: transparent url('/assets/imgs/banner.png') 0% 0% no-repeat padding-box;
@@ -133,6 +135,17 @@
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
+
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .header {
+        width: 100%;
+        /* Expande el header al ancho completo */
+    }
+
     .sidebar {
         display: none;
     }
@@ -154,13 +167,10 @@
         display: none;
     }
 
-    // .sidebar-open .overlay {
-    //     display: block;
-    // }
-
     .sidebar-open .sidebar {
         display: block;
         left: 0;
+        top: 60px;
     }
 
 }
@@ -173,5 +183,6 @@
 
 /* Estilos para el botón de menú hamburguesa */
 .menu-icon {
-    display: none; /* Oculta el icono de menú hamburguesa por defecto */
+    display: none;
+    /* Oculta el icono de menú hamburguesa por defecto */
 }
