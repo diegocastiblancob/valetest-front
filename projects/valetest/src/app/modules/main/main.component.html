@@ -23,7 +23,7 @@
                                 <li *ngFor="let subItem of item.subItems; let i = index"
                                     [ngClass]="{'active-item': activeItemMenuIndex === i}"
                                     (click)="toggleItemSubMenu(i)">
-                                    <a>{{ subItem.name }}</a>
+                                    <a [routerLink]="subItem.path">{{ subItem.name }}</a>
                                 </li>
                             </ul>
                             <hr>
@@ -46,9 +46,8 @@
             </div>
         </header>
         <div class="divider"></div>
-        <div class="banner"></div>
-        <div class="main-section">
-            <h1>Bienvenido(a), Nombre</h1>
+        <div class="content">
+            <router-outlet></router-outlet>
         </div>
     </div>
     <div class="overlay" (click)="toggleSidebar()"></div>

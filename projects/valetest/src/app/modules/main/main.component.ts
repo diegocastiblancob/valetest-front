@@ -12,11 +12,11 @@ export class MainComponent {
       subItems: [
         {
           name: 'Roles y funciones',
-          path: '#'
+          path: '/main'
         },
         {
           name: 'Formulario registro de usuarios',
-          path: '#'
+          path: '/main'
         }
       ]
     },
@@ -25,15 +25,15 @@ export class MainComponent {
       subItems: [
         {
           name: 'Crear y gestionar usuarios',
-          path: '#'
+          path: '/main'
         },
         {
           name: 'Crear usuarios (Individual)',
-          path: '#'
+          path: '/main'
         },
         {
           name: 'Crear usuarios (masivo)',
-          path: '#'
+          path: '/main'
         }
       ]
     },
@@ -42,11 +42,11 @@ export class MainComponent {
       subItems: [
         {
           name: 'Información general',
-          path: '#'
+          path: '/main'
         },
         {
           name: 'Secciones',
-          path: '#'
+          path: '/main'
         }
       ]
     },
@@ -55,15 +55,15 @@ export class MainComponent {
       subItems: [
         {
           name: 'Misiones activas',
-          path: '#'
+          path: '/main'
         },
         {
           name: 'Crear misión',
-          path: '#'
+          path: '/main'
         },
         {
           name: 'Misiones cerradas',
-          path: '#'
+          path: '/main'
         }
       ]
     },
@@ -72,11 +72,11 @@ export class MainComponent {
       subItems: [
         {
           name: 'Diseño del sistema',
-          path: '#'
+          path: '/main/look-and-feel/system-design'
         },
         {
           name: 'Configurar pie de página',
-          path: '#'
+          path: '/main/look-and-feel/system-design'
         }
       ]
     }
