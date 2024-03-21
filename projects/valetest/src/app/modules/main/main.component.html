@@ -1,0 +1,55 @@
+<div class="container" [class.sidebar-open]="sidebarOpen">
+    <div class="sidebar">
+        <div class="sidebar-content">
+            <div class="user-info">
+                <img src="assets/icons/icon-user.svg" alt="User Icon" class="user-icon">
+                <span class="username">Nombre de Usuario</span>
+            </div>
+            <hr />
+            <nav class="menu">
+                <ul>
+                    <li *ngFor="let item of menuItems; let i = index">
+                        <a (click)="toggleSubMenu(i)" class="menu-item">
+                            <div>
+                                <span class="menu-text">{{ item.name }}</span>
+                            </div>
+                            <div>
+                                <span class="arrow-icon"
+                                    [ngClass]="{'up': activeSubMenuIndex === i, 'down': activeSubMenuIndex !== i}"></span>
+                            </div>
+                        </a>
+                        <div class="submenu" *ngIf="activeSubMenuIndex === i">
+                            <ul>
+                                <li *ngFor="let subItem of item.subItems; let i = index"
+                                    [ngClass]="{'active-item': activeItemMenuIndex === i}"
+                                    (click)="toggleItemSubMenu(i)">
+                                    <a>{{ subItem.name }}</a>
+                                </li>
+                            </ul>
+                            <hr>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <button type="button">
+            <span>
+                <img src="assets/icons/logout_icon.svg" alt="">
+            </span>
+            Cerrar Sesión
+        </button>
+    </div>
+    <div class="content">
+        <header class="header">
+            <div class="menu-icon" (click)="toggleSidebar()">
+                <img src="assets/icons/icon-menu.svg" alt="Menu Icon">
+            </div>
+        </header>
+        <div class="divider"></div>
+        <div class="banner"></div>
+        <div class="main-section">
+            <h1>Bienvenido(a), Nombre</h1>
+        </div>
+    </div>
+    <div class="overlay" (click)="toggleSidebar()"></div>
+</div>
