@@ -1,0 +1,55 @@
+<mat-drawer-container class="container" autosize [hasBackdrop]="drawerMode === 'over'">
+    <mat-drawer #drawer class="sidebar" [mode]="drawerMode" opened="true">
+        <div class="sidebar-content">
+            <div class="user-info">
+                <img src="assets/icons/icon-user.svg" alt="User Icon" class="user-icon">
+                <span class="username">Nombre de Usuario</span>
+            </div>
+            <hr />
+            <nav class="menu">
+                <ul>
+                    <li *ngFor="let item of menuItems; let i = index">
+                        <a (click)="toggleSubMenu(i)" class="menu-item">
+                            <div>
+                                <span class="menu-text">{{ item.name }}</span>
+                            </div>
+                            <div>
+                                <span class="arrow-icon"
+                                    [ngClass]="{'up': activeSubMenuIndex === i, 'down': activeSubMenuIndex !== i}"></span>
+                            </div>
+                        </a>
+                        <div class="submenu" *ngIf="activeSubMenuIndex === i">
+                            <ul>
+                                <li *ngFor="let subItem of item.subItems; let i = index"
+                                    [ngClass]="{'active-item': activeItemMenuIndex === i}"
+                                    (click)="toggleItemSubMenu(i)">
+                                    <a [routerLink]="subItem.path">{{ subItem.name }}</a>
+                                </li>
+                            </ul>
+                            <hr>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <button type="button" class="btn btn--outline">
+            <span>
+                <img src="assets/icons/logout_icon.svg" alt="">
+            </span>
+            Cerrar Sesión
+        </button>
+    </mat-drawer>
+    <div class="sidenav-content">
+        <div class="content">
+            <header class="header">
+                <div class="menu-icon">
+                    <img src="assets/icons/icon-menu.svg" alt="Menu Icon" (click)="drawer.toggle()">
+                </div>
+            </header>
+            <div class="divider"></div>
+            <div class="content">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+</mat-drawer-container>

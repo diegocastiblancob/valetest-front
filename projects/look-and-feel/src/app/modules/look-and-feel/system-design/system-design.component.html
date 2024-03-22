@@ -1,0 +1,33 @@
+<div class="container">
+    <h2 class="title"> Diseño del sistema</h2>
+    <p class="sub-title">Colores</p>
+    <form [formGroup]="lookAndFeelForm" (ngSubmit)="onSubmit()">
+    <div class="content">
+        <div class="content-form">
+                <strong class="title-input">Color primario</strong>
+                <div class="form-group">
+                    <label for="color-primary">Al modificar este color cambiarás el color de fondo en el portal.</label>
+                    <input matInput type="color" id="color-primary" name="color-primary" formControlName="colorPrimary">
+                </div>
+                <hr/>
+                <strong class="title-input">Color Secundario</strong>
+                <div class="form-group">
+                    <label for="color-secondary">Al modificar este color cambiarás el color en los textos del portal.</label>
+                    <input matInput type="color" id="color-secondary" name="color-secondary" formControlName="colorSecondary">
+                </div>
+                <hr/>
+                <strong class="title-input">Color Terciario</strong>
+                <div class="form-group">
+                    <label for="color-tertiary">Al modificar este color cambiarás el color en los botones dentro del portal.</label>
+                    <input matInput type="color" id="color-tertiary" name="color-tertiary" formControlName="colorTertiary">
+                </div>
+                <p class="description">
+                    * Recuerda lograr un buen contraste que permita una correcta lectura de los elemento dentro del portal. Puedes hacer uso de esta herramienta: <a href="https://color.adobe.com/es/create/color-contrast-analyzer">https://color.adobe.com/es/create/color-contrast-analyzer</a> para comprobar el contraste.
+                </p>
+            </div>
+            <button type="submit" class="btn btn--outline">
+                Restaurar colores por defecto
+            </button>
+        </div>
+    </form>
+</div>

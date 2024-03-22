@@ -1,0 +1,19 @@
+<div class="banner"></div>
+<div class="main-section">
+    <h1>Bienvenido(a), Nombre</h1>
+    <div class="content">
+        <hr class="divider"/>
+        <nav class="menu">
+            <ul>
+                <li *ngFor="let item of menuItems; let i = index">
+                    <a class="menu-item">
+                        <div>
+                            <span class="menu-text">{{ item.name }}</span>
+                        </div>
+                        <!-- <mat-icon fontIcon="arrow_forward">arrow_forward</mat-icon> -->
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
