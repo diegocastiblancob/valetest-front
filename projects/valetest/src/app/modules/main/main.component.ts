@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { MatDrawerMode } from '@angular/material/sidenav';
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
@@ -82,7 +84,19 @@ export class MainComponent {
   ];
   activeSubMenuIndex: number = -1;
   activeItemMenuIndex: number = -1;
-  sidebarOpen: boolean = false;
+
+  isHandheld: boolean = false;
+  drawerMode: MatDrawerMode = 'side';
+
+  constructor(private breakpointObserver: BreakpointObserver) {}
+
+  ngOnInit() {
+    this.breakpointObserver.observe([Breakpoints.HandsetPortrait, Breakpoints.HandsetLandscape])
+    .subscribe(result => {
+      this.isHandheld = result.matches;
+      this.drawerMode =  window.innerWidth < 1023 ? 'over' as MatDrawerMode : 'side' as MatDrawerMode;
+    });
+  }
 
   toggleSubMenu(index: number): void {
     if (this.activeSubMenuIndex === index) {
@@ -100,7 +114,5 @@ export class MainComponent {
     }
   }
 
-  toggleSidebar(): void {
-    this.sidebarOpen = !this.sidebarOpen;
-  }
+
 }

@@ -14,3 +14,57 @@
         opacity: 1;
     }
 }
+
+.content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .divider,
+    .menu {
+        width: 536px;
+    }
+
+    .menu ul {
+        list-style-type: none;
+        padding: 24px 0;
+    }
+
+    .menu li {
+        text-align: left;
+        font: normal normal bold 16px/19px Euclid Circular B;
+        letter-spacing: 0px;
+        opacity: 1;
+        padding: 20px 8px;
+
+        a {
+            color: var(--ngx-valepro-color-secondary);
+        }
+    }
+
+    .menu-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .banner {
+        height: 180px;
+        background: transparent url('/assets/imgs/banner.png') 0% 0% no-repeat padding-box;
+        background-size: cover;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+
+    .banner {
+        height: 300px;
+        background: transparent url('/assets/imgs/banner.png') 0% 0% no-repeat padding-box;
+        background-size: cover;
+    }
+
+}

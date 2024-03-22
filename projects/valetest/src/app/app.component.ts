@@ -22,7 +22,7 @@ export class AppComponent {
   loadLookAndFeel() {
     this.lookAndFeelRepository.getProgram().subscribe({
       next: (lookAndFeel: UrlToProgramModel) => {
-        //applyTheme(lookAndFeel.lookAndFeel);
+        applyTheme(lookAndFeel.lookAndFeel);
       },
       error: (error: HttpErrorResponse) => {
         console.error(error);

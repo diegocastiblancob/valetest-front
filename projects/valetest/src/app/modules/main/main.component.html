@@ -1,5 +1,5 @@
-<div class="container" [class.sidebar-open]="sidebarOpen">
-    <div class="sidebar">
+<mat-drawer-container class="container" autosize [hasBackdrop]="drawerMode === 'over'">
+    <mat-drawer #drawer class="sidebar" [mode]="drawerMode" opened="true">
         <div class="sidebar-content">
             <div class="user-info">
                 <img src="assets/icons/icon-user.svg" alt="User Icon" class="user-icon">
@@ -38,17 +38,18 @@
             </span>
             Cerrar Sesión
         </button>
-    </div>
-    <div class="content">
-        <header class="header">
-            <div class="menu-icon" (click)="toggleSidebar()">
-                <img src="assets/icons/icon-menu.svg" alt="Menu Icon">
-            </div>
-        </header>
-        <div class="divider"></div>
+    </mat-drawer>
+    <div class="sidenav-content">
         <div class="content">
-            <router-outlet></router-outlet>
+            <header class="header">
+                <div class="menu-icon">
+                    <img src="assets/icons/icon-menu.svg" alt="Menu Icon" (click)="drawer.toggle()">
+                </div>
+            </header>
+            <div class="divider"></div>
+            <div class="content">
+                <router-outlet></router-outlet>
+            </div>
         </div>
     </div>
-    <div class="overlay" (click)="toggleSidebar()"></div>
-</div>
+</mat-drawer-container>
